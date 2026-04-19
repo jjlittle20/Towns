@@ -1,0 +1,20 @@
+
+[19 Apr 2026, 16:20:50][Towns] Can't load towns.ini
+[19 Apr 2026, 16:20:50][Towns] Error Code [0]
+[19 Apr 2026, 16:20:50][Towns] java.lang.UnsatisfiedLinkError: no lwjgl64 in java.library.path: C:\Program Files\Eclipse Adoptium\jdk-25.0.2.10-hotspot\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;c:\Users\James\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;c:\Users\James\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\copilotCli;C:\Users\James\AppData\Local\Programs\Microsoft VS Code;C:\Program Files\Eclipse Adoptium\jdk-25.0.2.10-hotspot\bin;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;%NVM_HOME%;%NVM_SYMLINK%;C:\ProgramData\chocolatey\bin;C:\Users\James\AppData\Local\Programs\Python\Launcher\;C:\Users\James\AppData\Local\Microsoft\WindowsApps;C:\Users\James\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\James\AppData\Local\nvm;C:\nvm4w\nodejs;.
+	at java.base/java.lang.ClassLoader.loadLibrary(ClassLoader.java:2285)
+	at java.base/java.lang.Runtime.loadLibrary0(Runtime.java:822)
+	at java.base/java.lang.System.loadLibrary(System.java:1685)
+	at org.lwjgl.Sys$1.run(Sys.java:72)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:74)
+	at org.lwjgl.Sys.doLoadLibrary(Sys.java:66)
+	at org.lwjgl.Sys.loadLibrary(Sys.java:87)
+	at org.lwjgl.Sys.<clinit>(Sys.java:117)
+	at org.lwjgl.opengl.Display.<clinit>(Display.java:135)
+	at xaos.utils.UtilsGL.destroy(UtilsGL.java:1249)
+	at xaos.main.Game.exit(Game.java:2306)
+	at xaos.Towns.loadPropertiesMain(Towns.java:84)
+	at xaos.Towns.getPropertiesString(Towns.java:212)
+	at xaos.Towns.getPropertiesString(Towns.java:201)
+	at xaos.main.Game.<init>(Game.java:185)
+	at xaos.Towns.main(Towns.java:48)

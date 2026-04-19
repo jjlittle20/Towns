@@ -1,0 +1,68 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    natives
+}
+
+dependencies {
+    implementation 'net.java.dev.jna:jna:5.13.0'
+
+    implementation 'org.lwjgl.lwjgl:lwjgl:2.9.3'
+    implementation 'org.lwjgl.lwjgl:lwjgl_util:2.9.3'
+    natives       'org.lwjgl.lwjgl:lwjgl-platform:2.9.3:natives-windows'
+
+    implementation 'org.slick2d:slick2d-core:1.0.2'
+    implementation 'org.l33tlabs.twl:pngdecoder:1.0'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+}
+
+application {
+    mainClass = 'xaos.Towns'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src']
+        }
+        resources {
+            srcDirs = ['src']
+            exclude '**/*.java'
+        }
+    }
+    test {
+        java {
+            srcDirs = ['src/test/java']
+        }
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'windows-1252'
+}
+
+tasks.register('extractNatives', Copy) {
+    from {
+        configurations.natives.collect { zipTree(it) }
+    }
+    into layout.buildDirectory.dir('natives')
+}
+
+tasks.named('run', JavaExec) {
+    dependsOn tasks.named('extractNatives')
+    workingDir = file('src')
+    systemProperty 'java.library.path', file("$buildDir/natives").absolutePath
+    jvmArgs '--enable-native-access=ALL-UNNAMED'
+}
+
+test {
+    useJUnitPlatform()
+}

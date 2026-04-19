@@ -1,0 +1,4 @@
+
+[19 Apr 2026, 16:24:17][UtilsGL] ImageIO decoding of image [icon.png] failed: javax.imageio.IIOException: Can't read input file!
+[19 Apr 2026, 16:24:17][UtilsGL] Failed to load image icon.png
+[19 Apr 2026, 16:24:17][UtilsGL] java.lang.NullPointerException: Cannot invoke "xaos.utils.ImageData.getImagePixels()" because "iconImage" is null
