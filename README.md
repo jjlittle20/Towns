@@ -1,40 +1,46 @@
 # Towns
-Repository for the Towns game
 
-This game was originally developed over a decade ago. For a while, it built a small but active community. Today, that community is much smaller, but the project still lives on in different ways.
+This repository contains the released source code for **Towns**, together with basic game data and a community-friendly local build setup.
 
-Over the years, several people have reached out asking for access to the source code to understand how it works, modify it, or create their own versions. Until now, I had always chosen to keep it private.
+Towns was originally developed over a decade ago and built a small but active community. The source was later released so people could study it, modify it, and create their own versions. The original repository explicitly states that it includes the full source code plus basic `.ini` and `.xml` game data, and that the code is released under GNU GPL v3. :contentReference[oaicite:0]{index=0}
 
-I think it’s time to change that.
+## Status
 
-This repository is the result of that decision.
+This fork adds a working local Gradle setup so the game can be compiled and run more easily on a modern machine.
 
+At the time of writing, the original source release is **not a complete standalone packaged game build**. The original README only mentions source code and basic game data, not a full graphics/audio/runtime asset pack. Some runtime assets may need to be provided from an existing Towns installation or another legitimate source. :contentReference[oaicite:1]{index=1}
 
-# Repository Contents
+## Repository contents
+
+This fork currently contains:
+
+- Original Towns source code
+- Basic game data files (`.ini`, `.xml`)
+- Gradle build setup
+- Gradle wrapper
+- Local run configuration for LWJGL 2 natives
+
+The original repository states its contents as:
 
 - Full source code of the game
-- Basic game data (.ini files, .xml files)
+- Basic game data (`.ini` files, `.xml` files) :contentReference[oaicite:2]{index=2}
 
-# Code License
+## Requirements
 
-The source code is released under the GNU GPL v3 license.
+Recommended:
 
-In simple terms:
+- Windows
+- Java 8 for best compatibility with this older LWJGL 2-era codebase
+- Gradle Wrapper (`gradlew` / `gradlew.bat`)
 
-- You can use, study, and modify the code
-- You can redistribute it
-- If you distribute a modified version, you must also release it under GPL and make the source code available
+This project uses legacy libraries such as LWJGL 2, JNA, Slick2D/OpenAL helpers, and a PNG decoder, which is consistent with the imports in the source code. :contentReference[oaicite:3]{index=3}
 
-See the LICENSE file for the full text.
+## Getting started
 
+### 1. Clone your fork
 
-# Contributions & Forks
-
-You are welcome to fork the project, experiment, or create your own versions.
-
-I don’t guarantee reviewing pull requests or maintaining the project, but I’d genuinely enjoy seeing what comes out of it.
-
-If you build something interesting, feel free to share it :)
-
-
-Thanks to everyone who has been part of this project.
+```bash
+git clone 
+cd Towns
+./gradlew build
+./gradlew run
