@@ -22,6 +22,7 @@ dependencies {
     implementation 'org.l33tlabs.twl:pngdecoder:1.0'
 
     testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 application {
@@ -32,6 +33,7 @@ sourceSets {
     main {
         java {
             srcDirs = ['src']
+            exclude 'test/**'
         }
         resources {
             srcDirs = ['src']
@@ -65,4 +67,7 @@ tasks.named('run', JavaExec) {
 
 test {
     useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
 }
