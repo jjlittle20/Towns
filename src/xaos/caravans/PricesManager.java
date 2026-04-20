@@ -128,6 +128,7 @@ public class PricesManager {
                 getPriceRule(PriceType.DEFENSE),
                 getPriceRule(PriceType.DAMAGE),
                 getPriceRule(PriceType.LOS));
+
     }
 
     public static void clear() {

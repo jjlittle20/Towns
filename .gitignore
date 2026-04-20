@@ -1,6 +1,22 @@
+# Gradle
 .gradle/
 build/
+
+# Java
 out/
+*.class
+
+# IDE
 .vscode/
 .idea/
 *.iml
+
+# Logs
+*.log
+
+# Local temp files
+executionHistory.bin
+
+# OS junk
+.DS_Store
+Thumbs.db
